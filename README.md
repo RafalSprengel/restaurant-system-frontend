@@ -77,7 +77,7 @@ A full-featured administrative interface for managing restaurant operations:
 | 👨‍💼 **Staff Management** | Manage administrative users with role-based permissions and access control |
 | 💬 **Messaging System** | Inbox for customer messages, read/unread tracking, quick reply, and notification badges |
 | 🪑 **Table Reservations** | View and manage reservations with conflict detection and real-time availability logic |
-| ⚙️ **System Settings** | Reservation time rules, booking constraints (min/max advance time), and email configuration |
+| ⚙️ **System Settings** | Reservation time rules, the maximum advance booking period, and email configuration |
 
 ---
 

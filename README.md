@@ -1,66 +1,119 @@
 <img width="1877" height="1493" alt="Zrzut ekranu 2026-01-06 123957" src="https://github.com/user-attachments/assets/1ae4a94f-20c7-48fb-82bf-ae1c52b0285f" />
  
-## Restaurant & Online Ordering System - Frontend
+# 🍽️ Restaurant & Online Ordering System – Frontend
 
-The frontend layer of a Full-stack Restaurant Point of Sale system, focusing on the customer ordering interface and cart management.
+A **React.js** frontend application for a full restaurant ordering and management platform. It provides a complete user experience for customers, staff, and administrators by consuming a RESTful API backend responsible for all business logic, authentication, payments, and data persistence.
+
+The application is structured as a production-style system with clear separation between the public interface, customer dashboard, and administrative panel.
+
+---
+
 ## 🚀 Live Demo
-- **URL:** [https://restaurant.rafalsprengel.com/](https://restaurant.rafalsprengel.com/)
+
+👉 [restaurant.rafalsprengel.com](https://restaurant.rafalsprengel.com/)
 
 ---
 
 ## 🔑 Key Features
 
-- **Menu Browser** – Dynamically renders products and categories fetched from the backend API.  
-- **Cart Management** – Persistent shopping cart stored via React Context, with multi-step order flow from selection to checkout.  
-- **Order Flow** – Users can review, edit, and submit orders; view order history after login.  
-- **User Accounts** – Registration, login, and profile management with JWT authentication.
-- **Admin / Staff Panel** – Role-based access for staff and administrators to manage products, categories, orders, reservations, messages, and system settings.
-- **Table Reservations** – View table availability, create and manage reservations directly from the frontend.  
-- **Messaging / Contact Form** – Submit messages to the restaurant and receive notifications; users can track messages.  
-- **Payments Integration** – Stripe API for secure online transactions.  
-- **Responsive UI** – Fully optimized for desktop, tablet, and mobile devices.  
-- **Status & Feedback** – Shows order status updates and validation feedback during checkout.  
+- **Menu Browser** – Dynamically renders products and categories fetched from the backend API
+- **Cart Management** – Persistent shopping cart using React Context with a multi-step order flow (selection → checkout → payment)
+- **Order Flow** – Full ordering process including delivery, dine-in, and takeaway options with order history tracking
+- **User Accounts** – JWT-based authentication with registration, login, and profile management
+- **Admin / Staff Panel** – Role-based access control for managing products, categories, orders, reservations, messages, and system settings
+- **Table Reservations** – Real-time table availability checking with reservation creation and management
+- **Messaging System** – Contact form integration with backend messaging system and notification tracking
+- **Payments Integration** – Secure Stripe-based payment processing with order confirmation flow
+- **Responsive UI** – Fully optimized for mobile, tablet, and desktop devices
+- **Order Status Tracking** – Real-time UI feedback for order states and validation during checkout
 
 ---
 
-## 🛠 Tech Stack
+## 🧭 Application Overview
 
-- **React.js** – Functional components with Hooks.  
-- **State Management** – React Context API (for cart, user, and UI state).  
-- **Routing** – React Router for page navigation.  
-- **Styling** – CSS / SCSS for modular, responsive design.  
-- **HTTP Requests** – Axios / Fetch for API communication.  
+### 🍽 Public Restaurant Interface
+
+The public-facing part of the application allows users to interact with the restaurant system:
+
+- Landing page with dynamic content
+- Food menu generated from backend database
+- Shopping cart system for online ordering
+- Full order creation flow (delivery, dine-in, takeaway)
+- Stripe checkout integration
+- Table reservation form with real-time availability validation
+- Image gallery showcasing restaurant content
+- Contact form connected to backend messaging system
+
+### 👤 Authentication & User System
+
+- JWT-based authentication system
+- Secure login and registration flow
+- Role-based UI rendering (Customer / Admin / Staff)
+- Persistent session handling via token storage
+
+### 🛒 Customer Dashboard
+
+Authenticated users can manage their account and orders:
+
+- View order history and order details
+- Manage delivery address
+- Change password
+- Delete account
+- Track personal order activity
 
 ---
 
-## 🌐 Backend & Integration
+## 🛠 Admin Panel
 
-The frontend communicates with the dedicated Restaurant POS REST API (Node.js / Express), supporting:
+A full-featured administrative interface for managing restaurant operations:
 
-- **Database** – MongoDB for products, orders, reservations, and messages.  
-- **Security** – JWT-based authentication and protected routes.  
-- **Payments** – Stripe integration for secure transactions.  
-- **User Management** – Full registration, login, and order history.  
-- **Reservations** – Table booking system integrated with backend availability checks.  
-- **Messaging** – Contact form submissions, replies, and unread message tracking.  
-
----
-
-## 📁 Project Structure
-
-- `src/pages/` – Page-level components (Menu, Cart, Checkout, Profile, Reservations).  
-- `src/components/` – Reusable UI elements (Buttons, Modals, Cards, Forms).  
-- `src/context/` – React Context for global state management (Cart, User, UI).  
-- `src/data/` – Local JSON or constants for interface placeholders.  
-- `src/styles/` – SCSS stylesheets for modular and responsive design.  
-- `src/utils/` – Helper functions and API service calls.  
+| Module | Description |
+|---|---|
+| 📊 **Dashboard** | Overview of key business metrics and system status |
+| 🍔 **Product Management** | Create, update, delete, and search products — dynamically reflected in the public menu |
+| 🗂 **Category Management** | Manage product categories and menu structure |
+| 👥 **Customer Management** | Search, edit, and manage registered users; account moderation and deletion |
+| 📦 **Order Management** | View and update customer orders; track order lifecycle and status changes |
+| 👨‍💼 **Staff Management** | Manage administrative users with role-based permissions and access control |
+| 💬 **Messaging System** | Inbox for customer messages, read/unread tracking, quick reply, and notification badges |
+| 🪑 **Table Reservations** | View and manage reservations with conflict detection and real-time availability logic |
+| ⚙️ **System Settings** | Reservation time rules, booking constraints (min/max advance time), and email configuration |
 
 ---
 
-## 🚀 Setup & Development
+## ⚙️ Technical Implementation
 
-```bash
-git clone https://github.com/RafalSprengel/restaurant-pos-frontend
-cd restaurant-pos-frontend
-npm install
-npm start
+- **React.js** (component-based architecture)
+- REST API integration with backend
+- Role-based routing system (protected routes)
+- Context-based state management (auth, cart, UI state)
+- Modular structure separating public, customer, and admin areas
+- Responsive design (mobile-first approach)
+- API-driven UI rendering
+- Stripe checkout integration
+- Real-time UI feedback for order and reservation flows
+
+---
+
+## 📌 Project Structure
+
+```
+├── pages/        # Application routes (public, customer, admin)
+├── components/   # Reusable UI components
+├── context/      # Global state management (auth, cart)
+├── services/     # API communication layer
+├── layouts/      # Layouts for different application areas
+└── utils/        # Helper functions
+```
+
+---
+
+## 🧠 Purpose
+
+This frontend application serves as the user-facing layer of a full-stack restaurant management system, designed as a production-ready SaaS-style platform for handling orders, reservations, payments, and restaurant operations.
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
